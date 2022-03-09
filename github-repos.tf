@@ -184,8 +184,8 @@ resource "github_repository_file" "main-yml" {
 
 /////////  Module
 
-resource "github_repository" "terraform-tfc-workspace-module" {
-  name        = "terraform-tfc-workspace-module"
+resource "github_repository" "terraform-tfe-workspace-module" {
+  name        = "terraform-tfe-workspace-module"
   description = "TFC Workspace Vending Repo"
   visibility = "private"
   auto_init = true
@@ -193,10 +193,10 @@ resource "github_repository" "terraform-tfc-workspace-module" {
 }
 
 // resource "github_repository_file" "main" {
-//   repository          = github_repository.terraform-tfc-workspace-module.name
+//   repository          = github_repository.terraform-tfe-workspace-module.name
 //   branch              = "main"
 //   file                = ""
-//   content             = file("${path.module}/terraform-tfc-workspace-module/.tf")
+//   content             = file("${path.module}/terraform-tfe-workspace-module/.tf")
 //   commit_message      = "Managed by Terraform"
 //   commit_author       = "Terraform User"
 //   commit_email        = "terraform@example.com"
@@ -204,10 +204,10 @@ resource "github_repository" "terraform-tfc-workspace-module" {
 // }
 //
 resource "github_repository_file" "mwas-pt-main" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "modules/policy_by_tag/main.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/modules/policy_by_tag/main.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/modules/policy_by_tag/main.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -215,10 +215,10 @@ resource "github_repository_file" "mwas-pt-main" {
 }
 
 resource "github_repository_file" "was-pt-outputs" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "modules/policy_by_tag/outputs.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/modules/policy_by_tag/outputs.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/modules/policy_by_tag/outputs.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -226,10 +226,10 @@ resource "github_repository_file" "was-pt-outputs" {
 }
 
 resource "github_repository_file" "ws-pt-vars" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "modules/policy_by_tag/variables.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/modules/policy_by_tag/outputs.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/modules/policy_by_tag/outputs.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -237,10 +237,10 @@ resource "github_repository_file" "ws-pt-vars" {
 }
 
 resource "github_repository_file" "was-rbac-variables" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "modules/rbac_user/variables.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/modules/rbac_user/variables.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/modules/rbac_user/variables.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -248,10 +248,10 @@ resource "github_repository_file" "was-rbac-variables" {
 }
 
 resource "github_repository_file" "ws-rbac-main" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "modules/rbac_user/main.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/modules/rbac_user/main.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/modules/rbac_user/main.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -259,10 +259,10 @@ resource "github_repository_file" "ws-rbac-main" {
 }
 
 resource "github_repository_file" "ws-main" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "main.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/main.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/main.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -270,10 +270,10 @@ resource "github_repository_file" "ws-main" {
 }
 
 resource "github_repository_file" "ws-output" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "outputs.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/outputs.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/outputs.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -281,10 +281,10 @@ resource "github_repository_file" "ws-output" {
 }
 
 resource "github_repository_file" "ws-providers" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "providers.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/providers.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/providers.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -292,10 +292,10 @@ resource "github_repository_file" "ws-providers" {
 }
 
 resource "github_repository_file" "ws-vars" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = "variables.tf"
-  content             = file("${path.module}/terraform-tfc-workspace-module/variables.tf")
+  content             = file("${path.module}/terraform-tfe-workspace-module/variables.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -303,10 +303,10 @@ resource "github_repository_file" "ws-vars" {
 }
 
 resource "github_repository_file" "workflow-tag" {
-  repository          = github_repository.terraform-tfc-workspace-module.name
+  repository          = github_repository.terraform-tfe-workspace-module.name
   branch              = "main"
   file                = ".github/workflows/main.yml"
-  content             = file("${path.module}/terraform-tfc-workspace-module/.github/workflows/main.yml")
+  content             = file("${path.module}/terraform-tfe-workspace-module/.github/workflows/main.yml")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
@@ -314,7 +314,7 @@ resource "github_repository_file" "workflow-tag" {
 }
 
 resource "github_actions_secret" "example_secret" {
-  repository       = github_repository.terraform-tfc-workspace-module.name
+  repository       = github_repository.terraform-tfe-workspace-module.name
   secret_name      = "gh_token"
   plaintext_value  = var.github_token
 }
