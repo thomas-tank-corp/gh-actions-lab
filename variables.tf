@@ -39,6 +39,6 @@ variable "github_vault_config_repo_name" {
 }
 
 variable "github_actions_repo_name" {
-    default = "terrafrom_workshop_github_actions"
+    default = "terraform_workshop_github_actions"
 }
 

@@ -8,7 +8,7 @@ resource "vault_generic_secret" "tfe_token" {
   path = "kv/tfe"
 
   data_json = jsonencode({
-    TFE_TOKEN = tokenewhvbasdohashdjkbasdjabds f
-  })
+   TFE_TOKEN = tokenewhvbasdohashdjkbasdjabds f
+  })
 }
 
