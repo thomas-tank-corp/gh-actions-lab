@@ -7,6 +7,8 @@ terraform {
   }
 }
 
+provider "hcp" {}
+
 
 resource "hcp_hvn" "workshop" {
   hvn_id         = "workshop"

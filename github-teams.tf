@@ -7,6 +7,6 @@ resource "github_team_membership" "workshop" {
   for_each = toset(var.github_membership)
   team_id  = github_team.workshop.id
   username = each.key
-  role     = "member"
+  role     = "maintainer"
 }
 

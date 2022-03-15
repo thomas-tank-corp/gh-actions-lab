@@ -28,6 +28,11 @@ resource "tfe_team" "workshop" {
   organization = var.tfc_org_name
 }
 
+resource "tfe_team_organization_member" "workshop" {
+  team_id = tfe_team.workshop.id
+  organization_membership_id = tfe_organization_membership.workshop[0].id
+}
+
 resource "tfe_team_token" "workshop" {
   team_id = tfe_team.workshop.id
 }

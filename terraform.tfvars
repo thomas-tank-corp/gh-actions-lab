@@ -1,6 +1,6 @@
 tfc_email = "tharris@hashicorp.com"
 tfc_org_name = "tom-se-hashi"
-github_org = "tom-test-hashi"
+github_org = "tom-se-workshop"
 
 
 ///// Users
