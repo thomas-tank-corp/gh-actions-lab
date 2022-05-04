@@ -8,11 +8,10 @@ module "workspace_tom_dev" {
 
   organization = "tom-se-hashi"
   workspace_name = "workshop-tom-dev"
-  workspace_oauth_id = "oc-HVLhb6wxttg9q5vG"
   workspace_owner_email = "tharris@hashicorp.com"
   workspace_vcs_identifier = "tom-test-hashi/tom-dev"
   workspace_tags = ["workshop-dev"]
-
+}
 
 
 
@@ -22,7 +21,6 @@ module "workspace_tom_prod" {
 
   organization = "tom-se-hashi"
   workspace_name = "workshop-tom-prod"
-  workspace_oauth_id = "oc-HVLhb6wxttg9q5vG"
   workspace_owner_email = "tharris@hashicorp.com"
   workspace_vcs_identifier = "tom-test-hashi/tom-dev"
   workspace_tags = ["workshop-prod"]
