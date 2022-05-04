@@ -10,3 +10,20 @@ resource "github_team_membership" "workshop" {
   role     = "maintainer"
 }
 
+resource "github_team_repository" "vending_repo" {
+  team_id    = github_team.workshop.id
+  repository = github_repository.vending_repo.name
+  permission = "pull"
+}
+
+resource "github_team_repository" "github_actions" {
+  team_id    = github_team.workshop.id
+  repository = github_repository.github_actions.name
+  permission = "pull"
+}
+
+resource "github_team_repository" "github_create_repo" {
+  team_id    = github_team.workshop.id
+  repository = github_repository.github_create_repo.name
+  permission = "pull"
+}
