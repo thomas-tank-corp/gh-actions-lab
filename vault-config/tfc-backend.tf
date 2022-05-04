@@ -1,6 +1,6 @@
 resource "vault_terraform_cloud_secret_backend" "workshop" {
   description = "Manages the Terraform Cloud backend"
-  default_lease_ttl_seconds = "30"
+  default_lease_ttl_seconds = "120"
   token       = var.tfc_team_token
 }
 

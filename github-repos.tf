@@ -22,6 +22,7 @@ resource "github_repository_file" "vending-main" {
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
   overwrite_on_create = true
+
   depends_on = [github_repository.vending_repo]
 }
 
@@ -146,6 +147,7 @@ resource "github_repository" "github_actions" {
   description = "github actions"
   visibility = "private"
   auto_init = true
+  is_template = true
 
 }
 

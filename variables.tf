@@ -27,18 +27,18 @@ variable "workshop_team" {
 }
 
 variable "github_vending_repo_name" {
-    default = "terraform_workshop_workspaces"
+    default = "workspace-vending"
 }
 
 variable "github_hcp_vault_repo_name" {
-    default = "terraform_workshop_hcp_vault"
+    default = "hcp-vault"
 }
 
 variable "github_vault_config_repo_name" {
-    default = "terraform_workshop_vault_config"
+    default = "vault-config"
 }
 
 variable "github_actions_repo_name" {
-    default = "terraform_workshop_github_actions"
+    default = "github-actions-template"
 }
 

@@ -13,17 +13,17 @@ resource "github_team_membership" "workshop" {
 resource "github_team_repository" "vending_repo" {
   team_id    = github_team.workshop.id
   repository = github_repository.vending_repo.name
-  permission = "pull"
+  permission = "admin"
 }
 
 resource "github_team_repository" "github_actions" {
   team_id    = github_team.workshop.id
   repository = github_repository.github_actions.name
-  permission = "pull"
+  permission = "admin"
 }
 
 resource "github_team_repository" "github_create_repo" {
   team_id    = github_team.workshop.id
   repository = github_repository.github_create_repo.name
-  permission = "pull"
+  permission = "admin"
 }

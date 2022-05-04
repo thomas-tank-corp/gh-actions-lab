@@ -47,6 +47,17 @@ resource "tfe_variable" "github_org_creds" {
   sensitive    = "false"
 }
 
+resource "tfe_variable" "oauth" {
+  key          = "workspace_oauth_id"
+  value        = tfe_oauth_client.workshop-oauth.oauth_token_id
+  category     = "terraform"
+  workspace_id = tfe_workspace.vending.id
+  sensitive    = "true"
+}
+
+
+
+
 
 
 

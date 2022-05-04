@@ -18,3 +18,5 @@ variable "hostname" {
 // variable "team_id" {}
 
 variable "tfc_org_name" {}
+
+variable "workspace_oauth_id" {}
