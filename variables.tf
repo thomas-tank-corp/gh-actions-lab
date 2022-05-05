@@ -35,7 +35,7 @@ variable "github_hcp_vault_repo_name" {
 }
 
 variable "github_vault_config_repo_name" {
-    default = "vault-config"
+    default = "hcp-vault-config"
 }
 
 variable "github_actions_repo_name" {
