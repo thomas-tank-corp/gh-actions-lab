@@ -1,15 +1,3 @@
-// terraform {
-//   backend "remote" {
-//     hostname = "app.terraform.io"
-//     organization = ""
-
-//     workspaces {
-//       prefix = ""
-//     }
-//   }
-// }
-
-
 provider "google" {}
 
 

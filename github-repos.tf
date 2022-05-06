@@ -116,7 +116,7 @@ resource "github_repository_file" "gcp-backend" {
   depends_on = [github_repository.vault-config]
 }
 
-resource "github_repository_file" "gcp-auth" {
+resource "github_repository_file" "git-auth" {
   repository          = github_repository.vault-config.name
   branch              = "main"
   file                = "github-auth.tf"
@@ -133,6 +133,30 @@ resource "github_repository_file" "vault-config-vars" {
   branch              = "main"
   file                = "variables.tf"
   content             = file("${path.module}/vault-config/variables.tf")
+  commit_message      = "Managed by Terraform"
+  commit_author       = "Terraform User"
+  commit_email        = "terraform@example.com"
+  overwrite_on_create = true
+  depends_on = [github_repository.vault-config]
+}
+
+resource "github_repository_file" "kv" {
+  repository          = github_repository.vault-config.name
+  branch              = "main"
+  file                = "kv.tf"
+  content             = file("${path.module}/vault-config/kv.tf")
+  commit_message      = "Managed by Terraform"
+  commit_author       = "Terraform User"
+  commit_email        = "terraform@example.com"
+  overwrite_on_create = true
+  depends_on = [github_repository.vault-config]
+}
+
+resource "github_repository_file" "tfc" {
+  repository          = github_repository.vault-config.name
+  branch              = "main"
+  file                = "tfc-backend.tf"
+  content             = file("${path.module}/vault-config/tfc-backend.tf")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"

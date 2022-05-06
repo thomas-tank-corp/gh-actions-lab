@@ -4,10 +4,10 @@ data "tfe_organization" "this_org" {
   name = var.organization
 }
 
-## OAuth Token ID
-data "tfe_oauth_client" "this_client" {
-  oauth_client_id = var.workspace_oauth_id
-}
+// ## OAuth Token ID
+// data "tfe_oauth_client" "this_client" {
+//   oauth_client_id = var.workspace_oauth_id
+// }
 
 ###################################################
 # Resources
@@ -24,7 +24,7 @@ resource "tfe_workspace" "this_ws" {
   vcs_repo {
     identifier     = var.workspace_vcs_identifier
     branch         = (var.workspace_vcs_branch == "default_branch" ? null : var.workspace_vcs_branch)
-    oauth_token_id = data.tfe_oauth_client.this_client.oauth_token_id
+    oauth_token_id = var.workspace_oauth_id
   }
 }
 
