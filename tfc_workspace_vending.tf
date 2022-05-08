@@ -41,7 +41,7 @@ resource "tfe_variable" "tfc_org_name" {
   sensitive    = "false"
 }
 
-resource "tfe_variable" "github_org" {
+resource "tfe_variable" "github_org_vending" {
   key          = "GITHUB_ORGANIZATION"
   value        = var.github_org
   category     = "env"
@@ -65,7 +65,7 @@ resource "tfe_variable" "oauth" {
   sensitive    = "true"
 }
 
-resource "tfe_variable" "hcp_id" {
+resource "tfe_variable" "hcp_id_vending" {
   key          = "HCP_CLIENT_ID"
   value        = var.hcp_client_id
   category     = "env"
@@ -74,7 +74,7 @@ resource "tfe_variable" "hcp_id" {
   sensitive    = "true"
 }
 
-resource "tfe_variable" "hcp_secret" {
+resource "tfe_variable" "hcp_secret_vending" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
   category     = "env"
