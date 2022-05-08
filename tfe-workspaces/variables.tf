@@ -11,11 +11,6 @@ variable "hostname" {
 //     description = "GCP service account"
 // }
 
-// variable "vault_token" {}
-
-// variable "vault_addr" {}
-
-// variable "team_id" {}
 
 variable "tfc_org_name" {}
 

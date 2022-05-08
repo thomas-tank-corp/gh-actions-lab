@@ -1,8 +1,10 @@
-variable  "github_org" {}
+variable  "github_org" {
+    default = "tom-se-hashi"
+}
 
-variable "github_repo_name" {}
+variable "name" {}
 
 variable "description" {
-    default = "new app repo"
+    default = "app repo"
 }
 

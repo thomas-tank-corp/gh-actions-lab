@@ -1,5 +1,17 @@
-provider "google" {}
+provider "vault" {
+  address = data.terraform_remote_state.hcp.outputs.VAULT_ADDR
+  token = data.terraform_remote_state.hcp.outputs.VAULT_TOKEN
+}
 
+data "vault_generic_secret" "default" {
+  path = "gcp/roleset/workshop/key"
+}
+
+provider "google" {
+  access_token = data.vault_generic_secret.default.data["key"]
+  project      = var.project
+  region       = var.region
+}
 
 
 resource "google_compute_instance" "default" {

@@ -18,7 +18,7 @@ resource "tfe_run_trigger" "vault" {
 resource "tfe_team_access" "vault-config" {
   team_id      = tfe_team.workshop.id
   workspace_id = tfe_workspace.vault-config.id
-  permissions {
+  permissions {current
     runs              = "apply"
     variables         = "write"
     state_versions    = "write"
@@ -65,12 +65,22 @@ resource "tfe_variable" "github_team" {
 }
 
 resource "tfe_variable" "tfc_team_id" {
-  key          = "tfc_team_id"
-  value        = tfe_team.workshop.id
-  category     = "terraform"
-  workspace_id = tfe_workspace.vault-config.id
-  description  = "TFC team ID"
-  sensitive    = "false"
+  key          = "HCP_CLIENT_ID"
+  value        = var.hcp_client_id
+  category     = "env"
+  workspace_id = tfe_workspace.hcp-vault.id
+  description  = "HCP Client ID"
+  sensitive    = "true"
+}
+
+
+resource "tfe_variable" "secret" {
+  key          = "HCP_CLIENT_SECRET"
+  value        = var.hcp_client_secret
+  category     = "env"
+  workspace_id = tfe_workspace.hcp-vault.id
+  description  = "HCP Client Secret"
+  sensitive    = "true"
 }
 
 resource "tfe_variable" "GCP_project" {

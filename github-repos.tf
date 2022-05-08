@@ -406,3 +406,37 @@ resource "github_actions_secret" "github_create_repo_secret" {
 }
 
 
+//////// jwt auth 
+
+resource "github_repository" "github_auth" {
+  name        = "terraform-github-auth-module"
+  description = "github jwt auth"
+  visibility = "private"
+  auto_init = true
+
+}
+
+resource "github_repository_file" "github_auth" {
+  repository          = github_repository.github_auth.name
+  branch              = "main"
+  file                = "main.tf"
+  content             = file("${path.module}/terraform-vault-github-auth-module/main.tf")
+  commit_message      = "Managed by Terraform"
+  commit_author       = "Terraform User"
+  commit_email        = "terraform@example.com"
+  overwrite_on_create = true
+}
+
+resource "github_repository_file" "github_auth_action" {
+  repository          = github_repository.github_auth.name
+  branch              = "main"
+  file                = ".github/workflows/main.yml"
+  content             = file("${path.module}/terraform-vault-github-auth-module/.github/workflows/main.yml")
+  commit_message      = "Managed by Terraform"
+  commit_author       = "Terraform User"
+  commit_email        = "terraform@example.com"
+  overwrite_on_create = true
+}
+
+
+

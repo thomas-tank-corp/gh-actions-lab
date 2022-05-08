@@ -31,6 +31,7 @@ jobs:
         namespace: admin
         secrets: |
               kv/tfe token | TFC_TEAM_TOKEN
+    
     - name: Checkout
       uses: actions/checkout@v2
 
