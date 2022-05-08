@@ -2,7 +2,13 @@ data "github_user" "workshop" {
   username = var.username
 }
 
-variable "username" {}
+variable "username" {
+  description = "github username"
+}
+
+variable "repo_name" {
+  description = "name of the github repository to authenticate from"
+} 
 
 resource "vault_jwt_auth_backend" "workshop" {
 description = "oidc auth backend for github actions"
@@ -24,7 +30,7 @@ resource "vault_jwt_auth_backend_role" "workshop"{
     role_name = "workshop"
     token_policies = ["default", "hcp-root"]
     bound_claims = {
-         "sub" = "repo:${var.name}:ref:refs/*"
+         "sub" = "repo:${var.repo_name}:ref:refs/*"
     }
     bound_subject = ""
     bound_audiences = ["https://github.com/${data.github_user.current.login}"]

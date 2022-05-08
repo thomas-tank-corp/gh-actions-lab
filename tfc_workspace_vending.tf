@@ -54,7 +54,7 @@ resource "tfe_variable" "github_creds" {
   value        = var.github_token
   category     = "env"
   workspace_id = tfe_workspace.vending.id
-  sensitive    = ""
+  sensitive    = "true"
 }
 
 resource "tfe_variable" "oauth" {

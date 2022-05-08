@@ -51,17 +51,17 @@ resource "github_repository_file" "workspace-dev" {
   depends_on = [github_repository.vending_repo]
 }
 
-resource "github_repository_file" "workspace-prod" {
-  repository          = github_repository.vending_repo.name
-  branch              = "main"
-  file                = "workspaces-app-tomh-prod"
-  content             = file("${path.module}/tfe-workspaces/workspaces-app-tomh-prod.tf")
-  commit_message      = "Managed by Terraform"
-  commit_author       = "Terraform User"
-  commit_email        = "terraform@example.com"
-  overwrite_on_create = true
-  depends_on = [github_repository.vending_repo]
-}
+// resource "github_repository_file" "workspace-prod" {
+//   repository          = github_repository.vending_repo.name
+//   branch              = "main"
+//   file                = "workspaces-app-tomh-prod"
+//   content             = file("${path.module}/tfe-workspaces/workspaces-app-tomh-prod.tf")
+//   commit_message      = "Managed by Terraform"
+//   commit_author       = "Terraform User"
+//   commit_email        = "terraform@example.com"
+//   overwrite_on_create = true
+//   depends_on = [github_repository.vending_repo]
+// }
 
 
 resource "github_repository" "hcp-vault" {
