@@ -104,11 +104,3 @@ resource "tfe_variable" "secret" {
 
 
 
-
-git config --global user.name "thomas-tank-corp"
-git config --global user.email "tharris@hashicorp.com"
-
-
-
-
-

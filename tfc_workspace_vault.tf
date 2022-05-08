@@ -18,7 +18,7 @@ resource "tfe_run_trigger" "vault" {
 resource "tfe_team_access" "vault-config" {
   team_id      = tfe_team.workshop.id
   workspace_id = tfe_workspace.vault-config.id
-  permissions {current
+  permissions {
     runs              = "apply"
     variables         = "write"
     state_versions    = "write"
