@@ -65,7 +65,7 @@ resource "tfe_variable" "oauth" {
   sensitive    = "true"
 }
 
-resource "tfe_variable" "id" {
+resource "tfe_variable" "hcp_id" {
   key          = "HCP_CLIENT_ID"
   value        = var.hcp_client_id
   category     = "env"
@@ -75,7 +75,7 @@ resource "tfe_variable" "id" {
 }
 
 
-resource "tfe_variable" "secret" {
+resource "tfe_variable" "hcp_secret" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
   category     = "env"
