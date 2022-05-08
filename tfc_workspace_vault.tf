@@ -64,7 +64,7 @@ resource "tfe_variable" "github_team" {
   sensitive    = "false"
 }
 
-resource "tfe_variable" "tfc_team_id" {
+resource "tfe_variable" "hcp_id" {
   key          = "HCP_CLIENT_ID"
   value        = var.hcp_client_id
   category     = "env"
@@ -74,7 +74,7 @@ resource "tfe_variable" "tfc_team_id" {
 }
 
 
-resource "tfe_variable" "secret" {
+resource "tfe_variable" "hcp_secret" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
   category     = "env"

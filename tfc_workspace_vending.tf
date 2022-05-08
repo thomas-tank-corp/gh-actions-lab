@@ -74,7 +74,6 @@ resource "tfe_variable" "hcp_id" {
   sensitive    = "true"
 }
 
-
 resource "tfe_variable" "hcp_secret" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
