@@ -22,7 +22,7 @@ resource "tfe_team_access" "hcp-vault" {
   }
 }
 
-resource "tfe_variable" "id" {
+resource "tfe_variable" "hcp_id_hcp_ws" {
   key          = "HCP_CLIENT_ID"
   value        = var.hcp_client_id
   category     = "env"
@@ -32,7 +32,7 @@ resource "tfe_variable" "id" {
 }
 
 
-resource "tfe_variable" "secret" {
+resource "tfe_variable" "hcp_secret_hcp_ws" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
   category     = "env"

@@ -64,21 +64,21 @@ resource "tfe_variable" "github_team" {
   sensitive    = "false"
 }
 
-resource "tfe_variable" "hcp_id" {
+resource "tfe_variable" "hcp_id_vault" {
   key          = "HCP_CLIENT_ID"
   value        = var.hcp_client_id
   category     = "env"
-  workspace_id = tfe_workspace.hcp-vault.id
+  workspace_id = tfe_workspace.vault-config.id
   description  = "HCP Client ID"
   sensitive    = "true"
 }
 
 
-resource "tfe_variable" "hcp_secret" {
+resource "tfe_variable" "hcp_secret_vault" {
   key          = "HCP_CLIENT_SECRET"
   value        = var.hcp_client_secret
   category     = "env"
-  workspace_id = tfe_workspace.hcp-vault.id
+  workspace_id = tfe_workspace.vault-config.id
   description  = "HCP Client Secret"
   sensitive    = "true"
 }

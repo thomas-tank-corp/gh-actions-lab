@@ -6,7 +6,7 @@ github_org = "tom-se-workshop"
 ///// Users
 github_membership = ["auto-store", "thomas-tank-corp"]
 tfc_invite = ["t.harris002@gmail.com"]
-github_team_name = "workshop_team"
+github_team_name = "workshop_se_team"
 
 
 // /// export credentials - TFC, HCP & Github

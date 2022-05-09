@@ -1,6 +1,6 @@
 module "workspace_tom_dev" {
   source  = "app.terraform.io/tom-se-hashi/workspace-module/tfe"
-  version = "0.0.5"
+  version = "0.0.3"
   workspace_oauth_id = var.workspace_oauth_id
   organization = "tom-se-hashi"
   workspace_name = "workshop-tom-app"
@@ -15,10 +15,9 @@ module "repo-module" {
   name = "workshop-tom-app"
 }  
 
-module "auth-module" {
-  source  = "app.terraform.io/tom-se-hashi/auth-module/github"
-  version = "0.0.2"
-  repo_name = "workshop-tom-app"
-  username = "thomas-tank-corp"
-}
-  
+# module "auth-module" {
+#   source  = "app.terraform.io/tom-se-hashi/auth-module/github"
+#   version = "0.0.2"
+#   repo_name = "workshop-tom-app"
+#   username = "thomas-tank-corp"
+# }
