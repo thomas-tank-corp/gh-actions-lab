@@ -20,6 +20,8 @@ variable "github_token" {}
 
 variable "tfc_email" {}
 
+variable "owner_team_id" {}
+
 variable "GCP_project" {}
 
 variable "workshop_team" {

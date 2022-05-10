@@ -4,7 +4,7 @@ resource "github_repository" "github_repo" {
   visibility = "private"
   auto_init = true
   template {
-    owner = "tom-se-hashi"
+    owner = "tom-se-workshop"
     repository = "github-actions-template"
   }
 }

@@ -110,3 +110,12 @@ resource "tfe_variable" "github_membership" {
   sensitive    = "false"
   hcl          = "true"
 }
+
+resource "tfe_variable" "team" {
+  key          = "tfc_team_id"
+  value        = var.owner_team_id
+  category     = "terraform"
+  workspace_id = tfe_workspace.vault-config.id
+  sensitive    = "true"
+  description  = "TFC token"
+}
