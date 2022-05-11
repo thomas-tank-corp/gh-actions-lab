@@ -19,9 +19,9 @@ resource "tfe_team_access" "vault-config" {
   team_id      = tfe_team.workshop.id
   workspace_id = tfe_workspace.vault-config.id
   permissions {
-    runs              = "apply"
-    variables         = "write"
-    state_versions    = "write"
+    runs              = "read"
+    variables         = "read"
+    state_versions    = "read"
     sentinel_mocks    = "read"
     workspace_locking = true
   }

@@ -1,0 +1,32 @@
+
+/// create a file in this repository named "YOURNAME-app-dev.tf"
+/// Copy the modules below into that file
+/// replace YOURNAME with your own name
+/// edit the email adress and username with appropriate values
+
+
+module "YOURNAME-repo" {
+  source  = "app.terraform.io/tom-se-hashi/repo-module/github"
+  version = "0.0.2"
+  name = "YOURNAME-app-dev"
+}  
+
+module "YOUURNAME-workspace" {
+  source  = "app.terraform.io/tom-se-hashi/workspace-module/tfe"
+  depends_on = [module.YOUURNAME-repo]
+  version = "0.0.2"
+  workspace_oauth_id = var.workspace_oauth_id
+  organization = "tom-se-hashi"
+  workspace_name = "YOUR NAME-app-dev"
+  workspace_owner_email = "YOUR EMAIL ADRESS ASSOCIATED WITH TFC"
+  workspace_vcs_identifier = "tom-se-workshop/YOURNAME 
+  workspace_tags = ["workshop-dev"]
+}
+
+
+module "YOURNAME-auth" {
+  source  = "app.terraform.io/tom-se-hashi/auth-module/github"
+  version = "0.0.1"
+  repo_name = "tom-se-workshop/YOURNAME"
+  username = "YOUR GITHUB USER NAME"
+}

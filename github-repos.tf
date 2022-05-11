@@ -42,8 +42,8 @@ resource "github_repository_file" "variables" {
 resource "github_repository_file" "workspace-dev" {
   repository          = github_repository.vending_repo.name
   branch              = "main"
-  file                = "workspaces-app-tomh-dev.tf"
-  content             = file("${path.module}/tfe-workspaces/workspaces-app-tomh-dev.tf")
+  file                = "example"
+  content             = file("${path.module}/tfe-workspaces/example")
   commit_message      = "Managed by Terraform"
   commit_author       = "Terraform User"
   commit_email        = "terraform@example.com"
